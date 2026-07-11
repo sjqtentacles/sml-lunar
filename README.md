@@ -27,6 +27,37 @@ val name = Lunar.phaseName (frac, Lunar.isWaxing jd)
 val nnm  = Lunar.nextNewMoon jd
 ```
 
+## Example
+
+`make example` builds and runs [`examples/demo.sml`](examples/demo.sml), which
+computes phase angle, illuminated fraction, phase name, lunar age, and
+next new/full moon epochs for a literal Julian Date (output is byte-identical
+under MLton and Poly/ML):
+
+```
+sml-lunar demo
+==============
+
+Constants:
+  synodicMonth     = 29.5306 days
+  anomalisticMonth = 27.5545 days
+  meanDistanceKm   = 384400.0 km
+
+Julian Date jd = 2460300.0
+  ageDays jd  = 8.846 days
+  isWaxing jd = true
+
+  phaseAngle {sun=45.0, moon=200.0}  = 155.00 deg
+  phaseAngle {sun=310.0, moon=100.0} = 150.00 deg
+  illuminatedFraction ang1 = 0.95
+  illuminatedFraction ang2 = 0.93
+
+  phase (from age) name = Waxing Gibbous
+
+  nextNewMoon jd  = 2460320.685
+  nextFullMoon jd = 2460305.920
+```
+
 ## Scope and Limitations
 
 This library uses a fixed reference epoch (JD 2451550.1) and a constant synodic month. It does **not** account for the Moon's varying orbital speed, parallax, libration, or the perturbations that cause actual new/full moon times to deviate from the mean by up to ±14 hours. For high-accuracy predictions use an ephemeris-based approach.
