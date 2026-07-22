@@ -1,5 +1,7 @@
 # sml-lunar
 
+[![CI](https://github.com/sjqtentacles/sml-lunar/actions/workflows/ci.yml/badge.svg)](https://github.com/sjqtentacles/sml-lunar/actions/workflows/ci.yml)
+
 A zero-dependency Standard ML library for simplified lunar phase calculations. Computes phase angle, illuminated fraction, phase name, lunar age, and next new/full moon times — all from Julian Date, using a synodic month model.
 
 ## API
